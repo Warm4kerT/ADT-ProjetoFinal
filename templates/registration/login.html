@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Automatic Deployment Tool</title>
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
+        <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    </head>
+    <body>
+        {% load static %}
+        <div class="columns is-mobile" style="background: url({% static 'users/bg.jpg' %}) ;">
+            <div class="column"></div>
+            <div class="column">
+                <form method="post" class="box" style="margin-top:25% ; margin-bottom: 100%;">
+                    {% csrf_token %}
+                    <div class="columns">
+                        <div class="column"></div>
+                        <div class="column">
+                            <div class="block">
+                                <h1 class="Title is-1">Automatic Deployment Tool Login</h1>
+                            </div>
+                            <table class="table">
+                                    
+                                {{ form }}
+                                
+                                <td class="buttons">
+                                    <button class="button is-dark" type="submit">Log In</button>
+                                </td>    
+                            </table>
+                        </div>
+                        <div class="column"></div>
+                    </div>
+                </form>
+            </div>
+            <div class="column"></div>
+          </div>
+    </body>
+</html>

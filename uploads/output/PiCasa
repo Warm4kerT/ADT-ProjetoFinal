@@ -1,0 +1,46 @@
+
+2022-06-27 00:03:54.870836
+echo "test" > test.txt
+
+root@raspberrypi:/home/pi# 
+2022-06-27 00:21:42.795286
+
+
+root@raspberrypi:/home/pi# echo "test" > test.txt
+
+root@raspberrypi:/home/pi# 
+2022-06-28 18:46:37.608073
+
+
+root@raspberrypi:/home/pi# echo "test" > test.txt
+
+root@raspberrypi:/home/pi# 
+2022-07-10 12:35:19.673398
+apt install tcshell
+
+
+A ler as listas de pacotes... 0%
+
+A ler as listas de pacotes... 100%
+
+A ler as listas de pacotes... Pronto
+
+A construir árvore de dependências... 0%
+
+A construir árvore de dependências... 0%
+
+A construir árvore de dependências... 50%
+
+A construir árvore de dependências... 50%
+
+A construir árvore de dependências... 94%
+
+A construir árvore de dependências... Pronto
+
+A ler a informação de estado... 0%          
+
+A ler a informação de estado... 0%
+
+A ler a informação de estado... Pronto
+[1;31mE: Não foi possível encontrar o pacote tcshell
+root@raspberrypi:/home/pi# 

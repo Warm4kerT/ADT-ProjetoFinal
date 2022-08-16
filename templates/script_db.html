@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h3>Script Database</h3>
+
+{% for script in list %}
+    <p>{{ script.id }} - {{script.name}} {{script.version}} {{script.size}} {{script.compatible_model}}</p>
+{% endfor %}
+
+
+{% endblock %}

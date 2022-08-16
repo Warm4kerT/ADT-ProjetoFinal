@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if user.is_authenticated %}
+{% include 'navbar.html' %}
+    <div class="columns is-mobile">
+        <div class="column"></div>
+        <div class="column" style="margin-top: 5%;">
+            <h3 class="title">Script Database</h3>
+            <section class="section">
+                <table class="table is-coverable is-fullwith">
+                    <thead>
+                        <th colspan="2">ID</th>
+                        <th colspan="2">Name</th>
+                        <th colspan="2">Version</th>
+                        <th colspan="2">Size</th>
+                        <th colspan="2">Compatible Model</th>
+                        <th colspan="2">Delete</th>
+                    </thead>
+                    {% for script in list %}
+                    <tr>
+                        <td colspan="2">{{ script.id }}</td>
+                        <td colspan="2">{{script.name}}</td>
+                        <td colspan="2">{{script.version}}</td>  
+                        <td colspan="2">{{script.size}}</td>
+                        <td colspan="2">{{script.compatible_model}}</td>
+                        <td colspan="2">
+                            <a class="button is-danger is-small" href="{% url 'delete_script' script.id %}">Remove</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </section>
+        </div>
+        <div class="column"></div>
+    </div> 
+{% else %}
+    {% include 'notLogin.html' %}
+{% endif %}
+
+{% endblock %}

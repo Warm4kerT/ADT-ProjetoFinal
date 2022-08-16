@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+    {% include 'navbar.html' %}
+    <div class="columns is-mobile">
+        <div class="column"></div>
+        <div class="column" style="margin-top: 5%;">
+
+            <form method="POST"> 
+                {% csrf_token %}
+                <div class="columns">
+                    <div class="column"></div>
+                    <div class="column">
+                        <div class="block">
+                            <h3 class="title">Router adding form</h3>
+                        </div>
+                        <table class="table">
+                    
+                            {{ form }}
+                
+                            <td class="buttons">
+                                <input class="button is-success" type="submit" value="Save">
+                            </td>    
+                        </table>
+                    </div>
+                    <div class="column"></div>
+                </div>
+            </form>
+        </div>
+        <div class="column"></div>
+    </div> 
+
+    {% else %}
+        {% include 'notLogin.html' %}
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h3>Router Database</h3>
+
+{% for router in list %}
+    <p>{{ router.id }} - {{router.name}} {{router.localization}}  {{router.model}}  {{router.ip}}  {{router.available_space}}</p>
+{% endfor %}
+
+
+
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+    {% include 'navbar.html' %}
+    <div class="columns is-mobile">
+        <div class="column"></div>
+        <div class="column" style="margin-top: 5%;">
+            <h3 class="title">Records</h3>
+            <section class="section">
+                <table class="table is-coverable is-fullwith">
+                    <thead>
+                        <th colspan="2">ID</th>
+                        <th colspan="2">Router</th>
+                        <th colspan="2">Script</th>
+                        <th colspan="2">Success</th>
+                        <th colspan="2">Date</th>
+                        <th colspan="2">Log File</th>
+                    </thead>
+                    {% for dp in list %}
+                    <tr>
+                        <td colspan="2">{{ dp.id }}</td>
+                        <td colspan="2">{{dp.router.name}}</td>
+                        <td colspan="2">{{dp.update.name}}</td>  
+                        <td colspan="2">{{dp.success}}</td>
+                        <td colspan="2">{{dp.date}}</td>
+                        <td colspan="2">
+                            <a class="button is-linkuma  is-small" href="{% url 'show' dp.id %}">File</a>
+                        </td>
+                    </tr>
+                    
+                    {% endfor %}
+                </table>
+            </section>
+        </div>
+        <div class="column"></div>
+    </div>  
+    {% else %}
+        {% include 'notLogin.html' %}
+    {% endif %}
+
+
+
+{% endblock %}

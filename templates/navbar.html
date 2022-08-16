@@ -1,0 +1,16 @@
+
+<nav class="navbar is-light" role="navigation">
+    <div class="navbar-menu">
+        <div class="navbar-start">
+            <a href="/pages/router_db/" class="navbar-item">Router DB</a>
+            <a href="/pages/router_form/" class="navbar-item">Router Form</a>
+            <a href="/pages/script_db/" class="navbar-item">Script DB</a>
+            <a href="/pages/script_form/" class="navbar-item">Script Form</a>
+            <a href="/pages/logs/" class="navbar-item">Logs</a>
+        </div>
+        <div class="navbar-end">
+            <p class="navbar-item">{{ user.get_username }}</p>
+            <a href="{% url 'logout' %}" class="navbar-item">Log Out</a>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% load static %}
+    <div class="columns is-mobile" style="background: url({% static 'users/bg.jpg' %}) ;">
+        <div class="column is-three-fifths is-offset-one-fifth">
+            <form method="post" class="box" style="margin-top:25% ; margin-bottom: 100%;">
+                <h1 class="Title">Welcome to Automatic Deployment Tool</h1>
+                <a class="button is-dark" href="{% url 'login' %}">Login</a>
+            </form>
+        </div>
+        <div class="column">
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,19 @@
+body{
+    height: 100%;
+    display: flex;
+}
+
+#db_capsule{
+    margin-top: 10%;
+
+    background-color: rgb(206, 206, 206);
+    border-radius: 12px;
+
+    width: 80%;
+    height: auto;
+
+    outline: solid 1px black;
+    display: grid;
+    justify-content: center;
+    justify-self: center;
+}

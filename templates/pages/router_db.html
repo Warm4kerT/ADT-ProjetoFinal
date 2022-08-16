@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+    {% include 'navbar.html' %}
+    <div class="columns is-mobile">
+        <div class="column"></div>
+        <div class="column" style="margin-top: 5%;">
+            <h3 class="title">Router Database</h3>
+            <section class="section">
+                <table class="table is-coverable is-fullwith">
+                    <thead>
+                        <th colspan="2">ID</th>
+                        <th colspan="2">Name</th>
+                        <th colspan="2">Localization</th>
+                        <th colspan="2">Model</th>
+                        <th colspan="2">IP</th>
+                        <th colspan="2">Port</th>
+                        <th colspan="2">available_space</th>
+                        <th colspan="2">Delete</th>
+                    </thead>
+                    {% for router in list %}
+                    <tr>
+                        <td colspan="2">{{ router.id }}</td>
+                        <td colspan="2">{{router.name}}</td>
+                        <td colspan="2">{{router.localization}}</td>  
+                        <td colspan="2">{{router.model}}</td>
+                        <td colspan="2">{{router.ip}}</td>
+                        <td colspan="2">{{router.porta}}</td>
+                        <td colspan="2">{{router.available_space}}</td>
+                        <td colspan="2">
+                            <a class="button is-danger is-small" href="{% url 'delete_router' router.id %}">Remove</a>
+                        </td>
+                    </tr>
+                    
+                    {% endfor %}
+                </table>
+            </section>
+        </div>
+        <div class="column"></div>
+    </div>  
+    {% else %}
+        {% include 'notLogin.html' %}
+    {% endif %}
+
+
+
+{% endblock %}
